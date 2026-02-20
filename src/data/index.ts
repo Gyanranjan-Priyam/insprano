@@ -1,4 +1,4 @@
 
 export * from "./testimonials";
-export * from "./devData";
 export * from "./eventData";
+export * from "./membersData";

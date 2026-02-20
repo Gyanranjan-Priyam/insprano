@@ -19,6 +19,11 @@ export { Loader, LoaderOverlay, LoaderSpinner } from "./loader"
 // 3D Components
 export { Grid3D } from "./grid"
 export { Tunnel } from "./tunnel"
+export { Globe } from "./globe"
+export { ParallaxGallery } from "./parallax-gallery"
+export type { ParallaxGalleryProps } from "./parallax-gallery"
+export { GsapGallery } from "./gsap-gallery"
+export type { GsapGalleryProps } from "./gsap-gallery"
 
 // Effects
 export { CircuitBackground } from "./circuit-background"
