@@ -1,0 +1,118 @@
+/* ============================================
+   INTENSITY: HEAVY — FULL ARCADE MODE
+   Chunky shadows, thick borders, CRT flicker, scanlines
+   ============================================ */
+
+:root {
+  /* Neo-brutal shadow offsets — extra chunky */
+  --retro-shadow-sm: 3px 3px 0px var(--primary);
+  --retro-shadow-md: 5px 5px 0px var(--primary);
+  --retro-shadow-lg: 8px 8px 0px var(--primary);
+  --retro-shadow-stack: 4px 4px 0px #000000, 8px 8px 0px var(--primary);
+
+  /* Borders — thick */
+  --retro-border: 4px;
+  --retro-border-thin: 3px;
+  --retro-border-thick: 5px;
+  --retro-scanline-opacity: 0.06;
+
+  /* Transition — snappy */
+  --retro-transition: 0.12s ease;
+
+  /* Typography — retro pixel/mono */
+  --tron-font: var(--font-share-tech-mono), "Courier New", Consolas, monospace;
+  --tron-display-font: 'Newsflash BB', "Courier New", monospace;
+  --tron-letter-spacing: 0.08em;
+  --tron-letter-spacing-wide: 0.15em;
+
+  /* Heavy intensity */
+  --tron-glow-intensity: 1;
+  --tron-border-glow:
+    var(--retro-shadow-md),
+    0 0 6px var(--glow),
+    0 0 12px color-mix(in oklch, var(--glow-muted) 40%, transparent);
+  --tron-hover-glow:
+    var(--retro-shadow-lg),
+    0 0 10px var(--glow),
+    0 0 20px color-mix(in oklch, var(--glow-muted) 50%, transparent);
+}
+
+/* Retro pulse animation */
+@keyframes retro-glow-pulse {
+  0%, 100% {
+    box-shadow: var(--tron-border-glow);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: var(--tron-hover-glow);
+    opacity: 0.92;
+  }
+}
+
+/* Button — chunky shadow + lift */
+[data-slot="button"] {
+  box-shadow: var(--retro-shadow-md);
+  transition: box-shadow var(--retro-transition), transform var(--retro-transition);
+}
+
+[data-slot="button"]:hover:not(:disabled) {
+  box-shadow: var(--retro-shadow-lg);
+  transform: translate(-2px, -2px);
+}
+
+[data-slot="button"]:active:not(:disabled) {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+/* Card — thick shadow + lift */
+[data-slot="card"],
+[data-slot="tron-data-card"] {
+  box-shadow: var(--retro-shadow-md);
+  transition: box-shadow var(--retro-transition), transform var(--retro-transition);
+}
+
+[data-slot="card"]:hover,
+[data-slot="tron-data-card"]:hover {
+  box-shadow: var(--retro-shadow-lg);
+  transform: translate(-2px, -2px);
+}
+
+/* Input — hard shadow on focus */
+[data-slot="input"]:focus,
+[data-slot="textarea"]:focus {
+  box-shadow: var(--retro-shadow-md);
+}
+
+/* Alert — pulsing shadow */
+[data-slot="alert"],
+[data-slot="tron-alert"] {
+  box-shadow: var(--retro-shadow-md);
+  animation: retro-glow-pulse 2.5s ease-in-out infinite;
+}
+
+/* Dialog — stack shadow */
+[data-slot="dialog-content"],
+[data-slot="sheet-content"] {
+  box-shadow: var(--retro-shadow-stack);
+}
+
+/* Timer — hard text shadow */
+[data-slot="tron-timer-value"] {
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+}
+
+/* HUD components */
+[data-slot="tron-hud"],
+[data-slot="tron-floating-panel"],
+[data-slot="tron-status-bar"] {
+  box-shadow: var(--retro-shadow-md);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

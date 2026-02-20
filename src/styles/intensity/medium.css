@@ -1,0 +1,77 @@
+/* ============================================
+   INTENSITY: MEDIUM — BALANCED RETRO
+   Offset shadows, thick borders, corner brackets
+   ============================================ */
+
+:root {
+  /* Neo-brutal shadow offsets */
+  --retro-shadow-sm: 2px 2px 0px var(--primary);
+  --retro-shadow-md: 4px 4px 0px var(--primary);
+  --retro-shadow-lg: 6px 6px 0px var(--primary);
+  --retro-shadow-stack: 3px 3px 0px #000000, 6px 6px 0px var(--primary);
+
+  /* Borders */
+  --retro-border: 3px;
+  --retro-border-thin: 2px;
+  --retro-border-thick: 4px;
+
+  /* Transition — snappy */
+  --retro-transition: 0.12s ease;
+
+  /* Typography */
+  --tron-font: var(--font-share-tech-mono), "Courier New", Consolas, monospace;
+  --tron-display-font: 'Newsflash BB', "Courier New", monospace;
+  --tron-letter-spacing: 0.08em;
+  --tron-letter-spacing-wide: 0.15em;
+
+  /* Medium intensity */
+  --tron-glow-intensity: 0.6;
+  --tron-border-glow:
+    var(--retro-shadow-sm),
+    0 0 4px color-mix(in oklch, var(--glow) 40%, transparent);
+  --tron-hover-glow:
+    var(--retro-shadow-md),
+    0 0 8px color-mix(in oklch, var(--glow) 60%, transparent);
+}
+
+/* Button — shadow + lift */
+[data-slot="button"] {
+  box-shadow: var(--retro-shadow-sm);
+  transition: box-shadow var(--retro-transition), transform var(--retro-transition);
+}
+
+[data-slot="button"]:hover:not(:disabled) {
+  box-shadow: var(--retro-shadow-md);
+  transform: translate(-1px, -1px);
+}
+
+/* Card — shadow + lift */
+[data-slot="card"],
+[data-slot="tron-data-card"] {
+  box-shadow: var(--retro-shadow-sm);
+  transition: box-shadow var(--retro-transition), transform var(--retro-transition);
+}
+
+[data-slot="card"]:hover,
+[data-slot="tron-data-card"]:hover {
+  box-shadow: var(--retro-shadow-md);
+  transform: translate(-1px, -1px);
+}
+
+/* Input — shadow on focus */
+[data-slot="input"]:focus,
+[data-slot="textarea"]:focus {
+  box-shadow: var(--retro-shadow-sm);
+}
+
+/* Alert — static shadow */
+[data-slot="alert"],
+[data-slot="tron-alert"] {
+  box-shadow: var(--retro-shadow-sm);
+}
+
+/* Dialog — stack shadow */
+[data-slot="dialog-content"],
+[data-slot="sheet-content"] {
+  box-shadow: var(--retro-shadow-stack);
+}

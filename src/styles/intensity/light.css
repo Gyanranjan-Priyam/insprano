@@ -1,0 +1,58 @@
+/* ============================================
+   INTENSITY: LIGHT — SUBTLE RETRO
+   Thin offset shadows, minimal borders
+   ============================================ */
+
+:root {
+  /* Neo-brutal shadow offsets — subtle */
+  --retro-shadow-sm: 2px 2px 0px var(--primary);
+  --retro-shadow-md: 3px 3px 0px var(--primary);
+  --retro-shadow-lg: 4px 4px 0px var(--primary);
+
+  /* Borders — thin */
+  --retro-border: 2px;
+  --retro-border-thin: 1px;
+  --retro-border-thick: 3px;
+
+  /* Transition — snappy */
+  --retro-transition: 0.12s ease;
+
+  /* Typography */
+  --tron-font: var(--font-share-tech-mono), "Courier New", Consolas, monospace;
+  --tron-display-font: 'Newsflash BB', "Courier New", monospace;
+  --tron-letter-spacing: 0.08em;
+  --tron-letter-spacing-wide: 0.15em;
+
+  /* Light intensity */
+  --tron-glow-intensity: 0.3;
+  --tron-border-glow: 0 0 3px color-mix(in oklch, var(--glow) 30%, transparent);
+  --tron-hover-glow: 0 0 6px color-mix(in oklch, var(--glow) 50%, transparent);
+}
+
+/* Button — subtle shadow */
+[data-slot="button"] {
+  box-shadow: var(--retro-shadow-sm);
+  transition: box-shadow var(--retro-transition), transform var(--retro-transition);
+}
+
+[data-slot="button"]:hover:not(:disabled) {
+  box-shadow: var(--retro-shadow-md);
+}
+
+/* Card — subtle shadow */
+[data-slot="card"],
+[data-slot="tron-data-card"] {
+  box-shadow: var(--retro-shadow-sm);
+  transition: box-shadow var(--retro-transition);
+}
+
+[data-slot="card"]:hover,
+[data-slot="tron-data-card"]:hover {
+  box-shadow: var(--retro-shadow-md);
+}
+
+/* Input — subtle shadow on focus */
+[data-slot="input"]:focus,
+[data-slot="textarea"]:focus {
+  box-shadow: var(--retro-shadow-sm);
+}

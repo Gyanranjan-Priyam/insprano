@@ -1,0 +1,78 @@
+{
+  "name": "INSPRANO 2026 - Annual Techno-Cultural Fest | GCE Kalahandi",
+  "short_name": "INSPRANO 2026",
+  "description": "INSPRANO is the annual techno-cultural fest of Government College of Engineering Kalahandi (GCEK), Bhawanipatna. 50+ events, hackathons, robowars, cultural nights, esports, workshops, and ₹5L+ in prizes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#FF7A18",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["education", "technology", "entertainment", "events", "festival"],
+  "icons": [
+    {
+      "src": "/assets/fest-logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/fest-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/fest-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/fest-logo.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/fest-logo.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/fest-logo.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "INSPRANO 2026 - Techno-Cultural Fest"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Events",
+      "short_name": "Events",
+      "description": "Explore 50+ events at INSPRANO 2026",
+      "url": "/events",
+      "icons": [{ "src": "/assets/fest-logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Gallery",
+      "short_name": "Gallery",
+      "description": "INSPRANO moments and memories",
+      "url": "/gallery",
+      "icons": [{ "src": "/assets/fest-logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with the INSPRANO team",
+      "url": "/contact",
+      "icons": [{ "src": "/assets/fest-logo.png", "sizes": "192x192" }]
+    }
+  ]
+}

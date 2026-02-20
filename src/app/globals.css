@@ -1,0 +1,538 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: 'Newsflash BB';
+  src: url('/fonts/NewsflashBB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Panel background */
+:root {
+  --panel: #121212;
+}
+
+@theme inline {
+  --breakpoint-xs: 375px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-panel: var(--panel);
+  --font-newsflash: 'Newsflash BB', sans-serif;
+  --font-insprano: var(--font-uncial), serif;
+  --font-sans: var(--font-vt323), "Courier New", monospace;
+  --font-mono: var(--font-share-tech-mono), "Courier New", monospace;
+  --font-display: var(--font-newsflash), "Courier New", monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-glow: var(--glow);
+  --color-glow-muted: var(--glow-muted);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+}
+
+/* ============================================
+   THEME: CYBER SUNSET
+   Tech + fest vibe — charcoal, orange neon, magenta & cyan
+   ============================================ */
+:root {
+  --radius: 0px;
+
+  /* Core — charcoal black base */
+  --background: #121212;
+  --foreground: #F5F5F5;
+
+  /* Primary — Orange neon */
+  --primary: #FF7A18;
+  --primary-foreground: #121212;
+
+  /* Cards & Popovers — dark violet */
+  --card: #1F1147;
+  --card-foreground: #F5F5F5;
+  --popover: #1F1147;
+  --popover-foreground: #F5F5F5;
+
+  /* Secondary — Magenta */
+  --secondary: #FF006E;
+  --secondary-foreground: #F5F5F5;
+
+  /* Muted — deep violet */
+  --muted: #1A0D3A;
+  --muted-foreground: #94A3B8;
+
+  /* Accent — Cyan */
+  --accent: #00F5D4;
+  --accent-foreground: #121212;
+
+  /* Destructive — bright red */
+  --destructive: #ff2222;
+
+  /* Borders — warm orange neon */
+  --border: #FF7A18;
+  --input: #1A0D3A;
+  --ring: #FF7A18;
+
+  /* Glow effects — Orange neon */
+  --glow: #FF7A18;
+  --glow-muted: #CC6214;
+
+  /* Shadow — hard offset, no blur */
+  --brutal-shadow: 4px 4px 0px #FF7A18;
+  --brutal-shadow-sm: 2px 2px 0px #FF7A18;
+  --brutal-shadow-lg: 6px 6px 0px #FF7A18;
+  --brutal-shadow-dark: 4px 4px 0px #000000;
+
+  /* Chart colors — cyber sunset palette */
+  --chart-1: #FF7A18;
+  --chart-2: #FF006E;
+  --chart-3: #00F5D4;
+  --chart-4: #CC6214;
+  --chart-5: #94A3B8;
+
+  /* Sidebar */
+  --sidebar: #121212;
+  --sidebar-foreground: #F5F5F5;
+  --sidebar-primary: #FF7A18;
+  --sidebar-primary-foreground: #121212;
+  --sidebar-accent: #FF006E;
+  --sidebar-accent-foreground: #F5F5F5;
+  --sidebar-border: #FF7A18;
+  --sidebar-ring: #FF7A18;
+}
+
+/* ============================================
+   BASE STYLES — RETRO NEO-BRUTALISM
+   ============================================ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    border-radius: 0 !important;
+  }
+
+  /* Allow pill-shaped header */
+  .header-pill {
+    border-radius: 9999px !important;
+  }
+
+  .header-pill .crt-scanlines {
+    border-radius: 9999px !important;
+  }
+
+  html {
+    image-rendering: auto;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-vt323), "Courier New", monospace;
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Newsflash BB', "Courier New", monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.6;
+  }
+
+  /* Selection */
+  ::selection {
+    background: #FF7A18;
+    color: #121212;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+    background: #121212;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1F1147;
+    border-left: 2px solid #FF7A18;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #FF7A18;
+    border: 2px solid #000000;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF006E;
+  }
+}
+
+/* ============================================
+   NEO-BRUTALISM UTILITY CLASSES
+   ============================================ */
+@layer utilities {
+  /* Brutal shadows — hard offset, zero blur */
+  .brutal-shadow {
+    box-shadow: var(--brutal-shadow);
+  }
+
+  .brutal-shadow-sm {
+    box-shadow: var(--brutal-shadow-sm);
+  }
+
+  .brutal-shadow-lg {
+    box-shadow: var(--brutal-shadow-lg);
+  }
+
+  .brutal-shadow-dark {
+    box-shadow: var(--brutal-shadow-dark);
+  }
+
+  /* Shadow that combines dark + accent */
+  .brutal-shadow-stack {
+    box-shadow:
+      4px 4px 0px #000000,
+      8px 8px 0px #FF7A18;
+  }
+
+  /* Retro glow — pixelated feel */
+  .glow {
+    box-shadow:
+      0 0 5px var(--glow),
+      0 0 10px var(--glow-muted),
+      var(--brutal-shadow-sm);
+  }
+
+  .glow-sm {
+    box-shadow:
+      0 0 3px var(--glow),
+      0 0 6px var(--glow-muted);
+  }
+
+  .glow-lg {
+    box-shadow:
+      0 0 10px var(--glow),
+      0 0 20px var(--glow-muted),
+      var(--brutal-shadow);
+  }
+
+  .glow-text {
+    text-shadow:
+      0 0 5px var(--glow),
+      0 0 10px var(--glow-muted),
+      2px 2px 0px rgba(0,0,0,0.8);
+  }
+
+  .glow-border {
+    border-color: var(--glow);
+    box-shadow:
+      0 0 5px var(--glow),
+      inset 0 0 5px var(--glow-muted),
+      var(--brutal-shadow-sm);
+  }
+
+  /* Animated glow pulse */
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 5px var(--glow),
+        0 0 10px var(--glow-muted),
+        var(--brutal-shadow-sm);
+    }
+    50% {
+      box-shadow:
+        0 0 10px var(--glow),
+        0 0 20px var(--glow),
+        0 0 30px var(--glow-muted),
+        var(--brutal-shadow);
+    }
+  }
+
+  /* CRT scanline overlay — retro monitor vibes */
+  .crt-scanlines {
+    background-image: repeating-linear-gradient(
+      0deg,
+      var(--primary),
+      var(--primary) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  }
+
+  /* CRT screen curvature effect */
+  .crt-screen {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .crt-screen::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 60%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  /* Retro scanlines */
+  .scanlines {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Grid floor effect */
+  .grid-floor {
+    background-image:
+      linear-gradient(var(--glow-muted) 1px, transparent 1px),
+      linear-gradient(90deg, var(--glow-muted) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+  }
+
+  /* Pixel border — double-line retro */
+  .pixel-border {
+    border: 3px solid var(--primary);
+    box-shadow:
+      inset 0 0 0 1px #000000,
+      var(--brutal-shadow-sm);
+  }
+
+  /* Retro dashed border */
+  .retro-dashed {
+    border: 2px dashed var(--primary);
+    box-shadow: var(--brutal-shadow-sm);
+  }
+
+  /* Circuit pattern */
+  .circuit-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0v20M30 40v20M0 30h20M40 30h20M30 30m-5 0a5 5 0 1 0 10 0a5 5 0 1 0 -10 0' fill='none' stroke='%23333' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+
+  /* Neon text — retro arcade */
+  .neon-text {
+    color: var(--glow);
+    text-shadow:
+      0 0 5px var(--glow),
+      0 0 10px var(--glow),
+      0 0 20px var(--glow),
+      0 0 40px var(--glow),
+      3px 3px 0px rgba(0,0,0,0.9);
+  }
+
+  /* Font display utility */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* Retro blink */
+  .retro-blink {
+    animation: retro-blink 1s step-end infinite;
+  }
+
+  @keyframes retro-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* Retro text flicker */
+  .retro-flicker {
+    animation: retro-flicker 0.15s infinite;
+  }
+
+  @keyframes retro-flicker {
+    0% { opacity: 0.97; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.98; }
+    15% { opacity: 0.96; }
+    20% { opacity: 0.99; }
+    100% { opacity: 1; }
+  }
+
+  /* Pixel art style rendering for images */
+  .pixel-render {
+    image-rendering: pixelated;
+  }
+
+  /* Neo-brutal hover lift */
+  .brutal-hover {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .brutal-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--primary);
+  }
+
+  .brutal-hover:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--primary);
+  }
+}
+
+/* ============================================
+   NEO-BRUTAL COMPONENT OVERRIDES
+   ============================================ */
+
+/* Buttons — thick borders, hard shadows, no radius */
+.btn-glow {
+  border: 3px solid var(--primary);
+  box-shadow: var(--brutal-shadow);
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.btn-glow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--brutal-shadow-lg);
+}
+
+.btn-glow:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Cards — neo-brutal thick border + offset shadow */
+.card-tron {
+  border: 3px solid var(--border);
+  box-shadow: var(--brutal-shadow);
+  transition: all 0.15s ease;
+  background: var(--card);
+}
+
+.card-tron:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--brutal-shadow-lg);
+  border-color: var(--primary);
+}
+
+/* Inputs — retro terminal look */
+.input-tron {
+  border: 2px solid var(--border);
+  background: #000000;
+  font-family: var(--font-share-tech-mono), monospace;
+}
+
+.input-tron:focus {
+  border-color: var(--primary);
+  box-shadow: var(--brutal-shadow-sm);
+  outline: none;
+}
+
+/* ============================================
+   RETRO MARQUEE ANIMATION
+   ============================================ */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ============================================
+   RETRO VHS / CRT NOISE OVERLAY
+   ============================================ */
+@keyframes noise {
+  0%, 100% { background-position: 0 0; }
+  10% { background-position: -5% -10%; }
+  20% { background-position: -15% 5%; }
+  30% { background-position: 7% -25%; }
+  40% { background-position: 20% 25%; }
+  50% { background-position: -25% 10%; }
+  60% { background-position: 15% 5%; }
+  70% { background-position: 0% 15%; }
+  80% { background-position: 25% 35%; }
+  90% { background-position: -10% 10%; }
+}
+
+.retro-noise::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+  animation: noise 0.5s steps(8) infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
